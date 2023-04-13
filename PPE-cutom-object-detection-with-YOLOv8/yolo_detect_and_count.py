@@ -34,6 +34,7 @@ class YOLOv8_ObjectDetector:
         iou (float): Minimum IOU threshold for non-max suppression.
         model (YOLO): The YOLOv8 model used for object detection.
         model_name (str): The name of the YOLOv8 model file (without the .pt extension).
+        results : results for the last prediction on a single image/frame
 
     Methods :
     -------------
