@@ -1,0 +1,7 @@
+path: /kaggle/working/data  # dataset root dir
+train: images/train  # train images (relative to 'path')
+val: images/validation  # val images (relative to 'path')
+
+# Classes
+names:
+  0: alpaca
