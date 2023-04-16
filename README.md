@@ -11,12 +11,14 @@ Whether you're an experienced data scientist or just starting with computer visi
 
 - [Custom-object-detection-with-YOLOv8](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8):  Directory for training and testing custom object detection models basd on YOLOv8 architecture, it contains the following folders files:
   - [class-descriptions-boxable.csv](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/class-descriptions-boxable.csv) : a csv file that contains all the IDs coreesponding to the classes provided by the OpenImages library for objecr detection
-  - Alpaca detector (single class object detector): 
+  - **Alpaca detector** (single class object detector): 
     - [-Kaggle- Alpaca detector-train.ipynb](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/-Kaggle-%20Alpaca%20detector-train.ipynb): Kaggle notebook that demonstrates how to preprocess data to train a single class (alpaca) object detector based on YOLOv8 architecture.
     - [alpaca training results](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8/alpaca%20training%20results): a folder that contains training results data for the alpaca detector.
     - [config -colab-.yaml](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/config%20-colab-.yaml) and
     [config -kaggle-.yaml](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/config%20-kaggle-.yaml): YAML files for training configuration for both Kaggle and colab versions.
-
+  - **Ant and Insect classes detector** ( multi-class object detector):
+    - [-Kaggle- Ant and Insect detector-train.ipynb](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/-Kaggle-%20Ant%20and%20Insect%20detector-train.ipynb):  Kaggle notebook that demonstrates how to preprocess data to train a multi-class (Ant class and Insect class) object detector based on YOLOv8 architecture.
+    - [Ant and insect training results](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results):  a folder that contains training results data for the And and Insect detector.
   
   
   
