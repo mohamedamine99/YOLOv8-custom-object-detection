@@ -26,3 +26,20 @@ Whether you're an experienced data scientist or just starting with computer visi
   - [test imgs](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8/test%20imgs) and [img results](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8/img%20results): folders that contain testing images and resulting images with annotated PPE information.
   - [yolo_detect_and_count.py](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/PPE-cutom-object-detection-with-YOLOv8/yolo_detect_and_count.py) : python module, developed i a previous project that provides simple classes for object detection and object tracking and counting with YOLOv8.
   - [requirements.txt](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/PPE-cutom-object-detection-with-YOLOv8/requirements.txt) requirements for the [sort.py](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/PPE-cutom-object-detection-with-YOLOv8/sort.py) which itself is used by the `yolo_detect_and_count.py` module.
+  
+  
+## Data Collection and Preprocessing for Object Detection using YOLOv8
+
+In this section we will go through all the steps necessary to collect and preprocess data in order to prepare it to be trained for object detection using YOLOv8.
+
+### Data collection:
+
+### Data preparation:
+
+## Training the model
+
+### Running training loop
+
+### Inspecting training results
+
+## Testing the model
