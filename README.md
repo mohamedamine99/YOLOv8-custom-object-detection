@@ -142,14 +142,46 @@ These files are organized in the following structure:
 
 Now that our dataset is ready let's get to the training part
 ### Preparing the configuration YAML file
+In order to train a YOLOv8 model for object detection, we need to provide specific configurations such as the dataset path, classes and training and validation sets. These configurations are typically stored in a YAML (Yet Another Markup Language) file which serves as a single source of truth for the model training process. This allows for easy modification and replication of the training process, as well as providing a convenient way to store and manage configuration settings.
+
+This YAML file should follow this format:
+```YAML
+path: /kaggle/working/data
+train: images/train
+val: images/validation
+
+names:
+  0: Ant
+  1: Insect
+
+```
 
 
 ### Running training loop
-Running the training loop is very simple thanks to ultralytics easy to use modules:
+Running the training loop is very simple and thanks to ultralytics easy to use `train` method. for more details about model training for YOLOv8 check ultalytics [documentation](https://docs.ultralytics.com/modes/train)
+
 ```py
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO("yolov8n.pt")  
+
+# Use the model for training
+results = model.train(data='/content/config.yaml', epochs=150)  # train the model
 
 ```
 
 ### Inspecting training results
+The `train` method automatically save the results in `./runs/detect/train`. These results include model weights (best.pt and last.pt), plots for various metrics (mAP50, mAP50-95, class loss, F1 score ,etc...) a quick visualzation of some train and validation batches, a results.csv file that summarizes training results , etc..  
+ 
+ This an example for Ant and Insect object detector trained for only 5 epochs with pre-trained yolov8n model:
+ 
+ <p align="center">
+    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/results.png" width=500>
+      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/val_batch2_pred.jpg" width=350>
+</p>
+
+
+  
 
 ## Testing the model
