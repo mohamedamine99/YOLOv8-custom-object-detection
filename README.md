@@ -88,12 +88,67 @@ Then we start the actual download :
 !python downloader.py ./image_list_file.txt --download_folder=./data_all --num_processes=5
 ```
 
-
 ### Data preparation:
+
+After fully downloading our data, it is crucial to convert it into a YOLO-compatible format.
+The format of a YOLO dataset consists of one text file per image, where each line in the text file contains the label and coordinates of an object in the image. The label and coordinates are separated by spaces, and the coordinates are normalized by the width and height of the image. The format of each line is as follows:
+
+```csharp
+<object-class> <x> <y> <width> <height>
+```
+where `<object-class>` is the name of the object class (0, 1, ...) , `<x>` and `<y>` are the center coordinates of the bounding box, and `<width>` and `<height>` are the width and height of the bounding box, respectively.
+
+These files are organized in the following structure:
+- A folder named `images` containing folders for each set : `training`, `validation` and `testing` containing all the images used for training validation and testing the YOLO model.
+- A folder named `labels` containing  containing folders for each set : `training`, `validation` and `testing`, containing the corresponding label files for each image. Each label file should have the same name as its corresponding image file and be in the YOLO format.
+
+```
+├── images/
+│   ├── training/
+│   │   ├── imageID_1.jpg
+│   │   ├── imageID_2.jpg
+│   │   ├── ...
+│   │   └── imageID_n.jpg
+│   ├── validation/
+│   │   ├── imageID_1.jpg
+│   │   ├── imageID_2.jpg
+│   │   ├── ...
+│   │   └── imageID_m.jpg
+│   └── testing/
+│       ├── imageID_1.jpg
+│       ├── imageID_2.jpg
+│       ├── ...
+│       └── imageID_k.jpg
+└── labels/
+    ├── training/
+    │   ├── imageID_1.txt
+    │   ├── imageID_2.txt
+    │   ├── ...
+    │   └── imageID_n.txt
+    ├── validation/
+    │   ├── imageID_1.txt
+    │   ├── imageID_2.txt
+    │   ├── ...
+    │   └── imageID_m.txt
+    └── testing/
+        ├── imageID_1.txt
+        ├── imageID_2.txt
+        ├── ...
+        └── imageID_k.txt
+
+```
 
 ## Training the model
 
+Now that our dataset is ready let's get to the training part
+### Preparing the configuration YAML file
+
+
 ### Running training loop
+Running the training loop is very simple thanks to ultralytics easy to use modules:
+```py
+
+```
 
 ### Inspecting training results
 
