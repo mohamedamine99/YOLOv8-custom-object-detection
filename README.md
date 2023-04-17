@@ -1,6 +1,8 @@
 # YOLOv8 custom object detection
 
-Welcome to my GitHub repository for custom object detection using [YOLOv8](https://github.com/ultralytics/ultralytics) by [Ultralytics](https://ultralytics.com/)! This project covers a range of object detection tasks and techniques, including utilizing a pretrained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing a multiclass object detector to recognize ants and insects.
+Welcome to my GitHub repository for custom object detection using [YOLOv8](https://github.com/ultralytics/ultralytics) by [Ultralytics](https://ultralytics.com/)! 
+
+This project covers a range of object detection tasks and techniques, including utilizing a pretrained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing a multiclass object detector to recognize ants and insects.
 
 To make this project accessible to all, I have leveraged Google Colab and Kaggle, providing easy-to-follow code and instructions for each stage of the project. Additionally, I have integrated my previously developed module `yolo_detect_and_count.py` for object detection, tracking, and counting with YOLOv8, streamlining the object detection process for various applications.
 
@@ -37,7 +39,7 @@ In this section we will go through all the steps necessary to collect and prepro
 ### Data collection:
 
 To collect diverse and representative data for object detection using YOLOv8, or generally any other object detection model, the [Open Images](https://storage.googleapis.com/openimages/web/visualizer/index.html) library provides a valuable resource that includes millions of well-labeled images with a wide range of object classes.  
-For more details about how to download and understand data provided by this library chech the following [link](https://storage.googleapis.com/openimages/web/download_v7.html).  
+- For more details about how to download and understand data provided by this library chech the following [link](https://storage.googleapis.com/openimages/web/download_v7.html).  
 For the rest of this data collection section, all data will be downloaded programatically (in script, no need for manual download).
 
 #### Downloading annotations and metadata for training, validation and (optional) testing
@@ -65,7 +67,7 @@ ImageID,Source,LabelName,Confidence,XMin,XMax,YMin,YMax,IsOccluded,IsTruncated,I
 By downloading only the necessary metadata files and selecting a subset of the images, we can save time and storage space while still obtaining high-quality data for our YOLOv8 model.
 
 #### Selecting a Sub-Dataset for Object Detection: Choosing the Right Data for Your YOLOv8 Model
-For more dtails about this important part of data collection check the [Open Images Download Section](https://storage.googleapis.com/openimages/web/download_v7.html#download-manually)  
+- For more dtails about this important part of data collection check the [Open Images Download Section](https://storage.googleapis.com/openimages/web/download_v7.html#download-manually)  
 
 This section will explain the main strategy behind building a sub-dataset, with image data, for specific objects we want our model to detect.  
 **We will simply follow the Open Image guidelines**. The main approach at this point is to create a text file, `image_list_file.txt` containing all the image IDs that we're interested in downloading. These IDs  come from filtering the annotations with certain classes. The text file must follow the following format
@@ -174,13 +176,19 @@ results = model.train(data='/content/config.yaml', epochs=150)  # train the mode
 ### Inspecting training results
 The `train` method automatically save the results in `./runs/detect/train`. These results include model weights (best.pt and last.pt), plots for various metrics (mAP50, mAP50-95, class loss, F1 score ,etc...) a quick visualzation of some train and validation batches, a results.csv file that summarizes training results , etc..  
  
- This an example for Ant and Insect object detector trained for only 5 epochs with pre-trained yolov8n model:
+ This an example for Ant and Insect object detector trained for **only 5 epochs** with pre-trained yolov8n model:
  
  <p align="center">
-    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/results.png" width=500>
-      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/val_batch2_pred.jpg" width=350>
+    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/results.png" width=600>
+      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/val_batch2_pred.jpg" width=500>
 </p>
 
+ This an example for Ant and Insect object detector trained for **only 45 epochs** with pre-trained yolov8n model:
+ 
+ <p align="center">
+    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-45%20epochs-/results.png" width=600>
+      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-45%20epochs-/val_batch2_pred.jpg" width=500>
+</p>
 
   
 
