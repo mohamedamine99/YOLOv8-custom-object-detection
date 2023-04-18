@@ -148,7 +148,7 @@ In order to train a YOLOv8 model for object detection, we need to provide specif
 
 This YAML file should follow this format:
 ```YAML
-path: /kaggle/working/data
+path: /kaggle/working/data  # Use absolute path 
 train: images/train
 val: images/validation
 
