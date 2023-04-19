@@ -1,5 +1,9 @@
 # YOLOv8 custom object detection
 
+<p align="center">
+    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/GIFs/Alpaca.gif" width=470
+</p>
+
 Welcome to my GitHub repository for custom object detection using [YOLOv8](https://github.com/ultralytics/ultralytics) by [Ultralytics](https://ultralytics.com/)! 
 
 This project covers a range of object detection tasks and techniques, including utilizing a pretrained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing a multiclass object detector to recognize ants and insects.
@@ -179,17 +183,14 @@ The `train` method automatically save the results in `./runs/detect/train`. Thes
  This an example for Ant and Insect object detector trained for **only 5 epochs** with pre-trained yolov8n model:
  
  <p align="center">
-    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/results.png" width=600>
-      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-5%20epochs-/val_batch2_pred.jpg" width=500>
+    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20%205%20epochs/results.png" width=600>
+      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20%205%20epochs/val_batch2_pred.jpg" width=500>
 </p>
+
 
  This an example for Ant and Insect object detector trained for **only 45 epochs** with pre-trained yolov8n model:
  
  <p align="center">
-    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-45%20epochs-/results.png" width=600>
-      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20-45%20epochs-/val_batch2_pred.jpg" width=500>
+    <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20%2045%20epochs/results.png" width=600>
+      <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20%2045%20epochs/val_batch2_pred.jpg" width=500>
 </p>
-
-  
-
-## Testing the model
