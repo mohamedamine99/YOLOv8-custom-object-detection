@@ -10,11 +10,14 @@
 
 Welcome to my GitHub repository for custom object detection using [YOLOv8](https://github.com/ultralytics/ultralytics) by [Ultralytics](https://ultralytics.com/)! 
 
-This project covers a range of object detection tasks and techniques, including utilizing a pretrained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing a multiclass object detectors to recognize bess and butterflies, ants and insects.
+This project covers a range of object detection tasks and techniques, including utilizing a pretrained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing a multiclass object detectors to recognize bees and butterflies, ants and insects.
 
 To make this project accessible to all, I have leveraged Google Colab and Kaggle, providing easy-to-follow code and instructions for each stage of the project. Additionally, I have integrated my previously developed module `yolo_detect_and_count.py` for object detection, tracking, and counting with YOLOv8, streamlining the object detection process for various applications.
 
 Whether you're an experienced data scientist or just starting with computer vision, this repository provides valuable insights into the world of custom object detection using YOLOv8.
+
+The training process is automated for efficient training of custom object detection models. Simply specify detectable classes and training hyperparameters, and the code will take care of the rest, including downloading proper datasets, reorganizing the dataset in the YOLO compatible format, generating proper YAML files, starting the training process, and automatically saving the results.
+
 
 ## Navigating this repository
 
@@ -30,7 +33,7 @@ Whether you're an experienced data scientist or just starting with computer visi
     
   - **Bee and Butterfly classes detector** ( multi-class object detector):
     - [Bees and Butterflies YOLOv8_Custom_Object_detector.ipynb](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Bees%20and%20Butterflies%20YOLOv8_Custom_Object_detector.ipynb):  Kaggle notebook that demonstrates how to preprocess data to train a multi-class (Bee class and Butterfly class) object detector based on YOLOv8 architecture.
-    - [Bee and Butterfly epochs](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8/Bee%20and%20Butterfly%2060%20epochs):  a folder that contains training results data for the Bee and Butterfly detector for **60 epochs** of training.
+    - [Bee and Butterfly 60 epochs](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8/Bee%20and%20Butterfly%2060%20epochs):  a folder that contains training results data for the Bee and Butterfly detector for **60 epochs** of training.
     
     
   - **Ant and Insect classes detector** ( multi-class object detector):
