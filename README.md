@@ -10,13 +10,13 @@
 
 Welcome to my GitHub repository for custom object detection using [YOLOv8](https://github.com/ultralytics/ultralytics) by [Ultralytics](https://ultralytics.com/)! 
 
-This project covers a range of object detection tasks and techniques, including utilizing a pretrained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing a multiclass object detectors to recognize bees and butterflies, ants and insects.
+This project covers a range of object detection tasks and techniques, including utilizing a pre-trained YOLOv8-based network model for [PPE object detection](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/PPE-cutom-object-detection-with-YOLOv8), training a custom YOLOv8 model to recognize a single class (in this case, alpacas), and developing multiclass object detectors to recognize bees and butterflies, ants and insects.
 
 To make this project accessible to all, I have leveraged Google Colab and Kaggle, providing easy-to-follow code and instructions for each stage of the project. Additionally, I have integrated my previously developed module `yolo_detect_and_count.py` for object detection, tracking, and counting with YOLOv8, streamlining the object detection process for various applications.
 
 Whether you're an experienced data scientist or just starting with computer vision, this repository provides valuable insights into the world of custom object detection using YOLOv8.
 
-The training process is automated for efficient training of custom object detection models. Simply specify detectable classes and training hyperparameters, and the code will take care of the rest, including downloading proper datasets, reorganizing the dataset in the YOLO compatible format, generating proper YAML files, starting the training process, and automatically saving the results.
+The training process is automated for efficient training of custom object detection models. Simply specify detectable classes and training hyperparameters, and the code will take care of the rest, including downloading proper datasets, reorganizing the dataset in the YOLO-compatible format, generating proper YAML files, starting the training process, and automatically saving the results.
 
 
 ## Navigating this repository
@@ -24,7 +24,7 @@ The training process is automated for efficient training of custom object detect
 
 - [Custom-object-detection-with-YOLOv8](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8):  Directory for training and testing custom object detection models basd on YOLOv8 architecture, it contains the following folders files:
   - [YOLOv8_Custom_Object_detector.ipynb](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/YOLOv8_Custom_Object_detector.ipynb): an implementation example for the trained models.
-  - [class-descriptions-boxable.csv](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/class-descriptions-boxable.csv) : a csv file that contains all the IDs coreesponding to the classes provided by the OpenImages library for objecr detection
+  - [class-descriptions-boxable.csv](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/class-descriptions-boxable.csv) : a CSV file that contains all the IDs corresponding to the classes provided by the OpenImages library for object detection
   - **Alpaca detector** (single class object detector): 
     - [-Kaggle- Alpaca detector-train.ipynb](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/-Kaggle-%20Alpaca%20detector-train.ipynb): Kaggle notebook that demonstrates how to preprocess data to train a single class (alpaca) object detector based on YOLOv8 architecture.
     - [alpaca training results](https://github.com/mohamedamine99/YOLOv8-custom-object-detection/tree/main/Custom-object-detection-with-YOLOv8/alpaca%20training%20results): a folder that contains training results data for the alpaca detector.
@@ -103,7 +103,7 @@ Now let's get to the part where we actually download images. Open Images provide
 
 Then we start the actual download :
 ```py
-# run the donwloader script in order to download data related to the target objects 
+# run the downloader script in order to download data related to the target objects 
 # and according to the image_list_file.txt
 !python downloader.py ./image_list_file.txt --download_folder=./data_all --num_processes=5
 ```
@@ -120,7 +120,7 @@ where `<object-class>` is the name of the object class (0, 1, ...) , `<x>` and `
 
 These files are organized in the following structure:
 - A folder named `images` containing folders for each set : `training`, `validation` and `testing` containing all the images used for training validation and testing the YOLO model.
-- A folder named `labels` containing  containing folders for each set : `training`, `validation` and `testing`, containing the corresponding label files for each image. Each label file should have the same name as its corresponding image file and be in the YOLO format.
+- A folder named `labels` containing  folders for each set : `training`, `validation` and `testing`, containing the corresponding label files for each image. Each label file should have the same name as its corresponding image file and be in the YOLO format.
 
 ```
 ├── images/
@@ -192,9 +192,9 @@ results = model.train(data='/content/config.yaml', epochs=150)  # train the mode
 ```
 
 ### Inspecting training results
-The `train` method automatically save the results in `./runs/detect/train`. These results include model weights (best.pt and last.pt), plots for various metrics (mAP50, mAP50-95, class loss, F1 score ,etc...) a quick visualzation of some train and validation batches, a results.csv file that summarizes training results , etc..  
+The `train` method automatically saves the results in `./runs/detect/train`. These results include model weights (best.pt and last.pt), plots for various metrics (mAP50, mAP50-95, class loss, F1 score ,etc...) a quick visualization of some train and validation batches, a results.csv file that summarizes training results, etc..  
  
- This an example for Ant and Insect object detector trained for **only 5 epochs** with pre-trained yolov8n model:
+ This an example for Ant and Insect object detector trained for **only 5 epochs** with a pre-trained yolov8n model:
  
  <p align="center">
     <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20%205%20epochs/results.png" width=600>
@@ -202,7 +202,7 @@ The `train` method automatically save the results in `./runs/detect/train`. Thes
 </p>
 
 
- This an example for Ant and Insect object detector trained for **only 45 epochs** with pre-trained yolov8n model:
+ This an example for Ant and Insect object detector trained for **only 45 epochs** with a pre-trained yolov8n model:
  
  <p align="center">
     <img src="https://github.com/mohamedamine99/YOLOv8-custom-object-detection/blob/main/Custom-object-detection-with-YOLOv8/Ant%20and%20insect%20training%20results%20%2045%20epochs/results.png" width=600>
